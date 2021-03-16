@@ -1,6 +1,6 @@
 import * as types from '../constants/actionTypes'
 
-export const getAllSpot = (top, skip) => ({
+export const getCitySpot = (top, skip) => ({
   type: types.GET_CITY_SPOT,
   payload: {
     top: top,
