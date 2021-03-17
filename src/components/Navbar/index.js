@@ -1,1 +1,3 @@
-export * from './NavBar.jsx'
+import NavBar from './NavBar'
+
+export default NavBar
