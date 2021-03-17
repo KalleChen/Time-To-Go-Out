@@ -1,1 +1,3 @@
-export * from './CitySpot.jsx'
+import CitySpot from './CitySpot.jsx'
+
+export default CitySpot

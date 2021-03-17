@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from '@material-ui/styles'
 import { CssBaseline } from '@material-ui/core'
 
-import AllSpot from '../AllSpot'
+import Router from './Router'
 import theme from '../../utils/theme'
 
 const Main = () => {
@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AllSpot />
+      <Router />
     </ThemeProvider>
   )
 }
