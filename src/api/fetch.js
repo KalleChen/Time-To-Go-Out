@@ -6,9 +6,9 @@ export default class SpotFetcher {
   }
 
   getURL (url, params) {
-    let newURL = this.baseURL + url + '?format=JSON'
-    params.forEach((param, index) => {
-      newURL += param.key + '=' + param.value
+    let newURL = this.baseURL + url + '?$format=JSON'
+    params.forEach(param => {
+      newURL += '&$' + param.key + '=' + param.value
     })
     return newURL
   }

@@ -1,6 +1,6 @@
 import * as types from '../constants/actionTypes'
 
-export const initialState = { spots: [], top: 30, skip: 10 }
+export const initialState = { spots: [], top: 30, skip: 0 }
 
 export default function allSpotReducer (allSpot = initialState, action) {
   switch (action.type) {
