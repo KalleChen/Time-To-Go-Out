@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Main } from './components/Main'
+import Main from './components/Main'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
+
 import store from './store'
 
 ReactDOM.render(

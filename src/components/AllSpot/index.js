@@ -1,1 +1,3 @@
-export * from './AllSpot.jsx'
+import AllSpot from './AllSpot'
+
+export default AllSpot
