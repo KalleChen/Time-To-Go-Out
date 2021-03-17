@@ -8,10 +8,10 @@ import rootSaga from '../sagas'
 export default function configureStore () {
   const sagaMiddleware = createSagaMiddleware()
   const store = createStore(
-    initialState,
     rootReducer,
-    applyMiddleware(rootSaga)
+    initialState,
+    applyMiddleware(sagaMiddleware)
   )
-  sagaMiddleware(rootSaga)
+  sagaMiddleware.run(rootSaga)
   return store
 }

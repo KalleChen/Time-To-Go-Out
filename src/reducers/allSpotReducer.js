@@ -1,11 +1,11 @@
 import * as types from '../constants/actionTypes'
 
-export const initialState = []
+export const initialState = { spots: [], top: 30, skip: 10 }
 
 export default function allSpotReducer (allSpot = initialState, action) {
   switch (action.type) {
     case types.GET_ALL_SPOT_SUCCESS:
-      return [...allSpot, ...action.payload]
+      return { ...allSpot, spots: [...allSpot.spots, ...action.payload] }
     default:
       return allSpot
   }
