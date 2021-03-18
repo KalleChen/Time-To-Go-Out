@@ -5,7 +5,11 @@ export const initialState = { spots: [], top: 30, skip: 0 }
 export default function allSpotReducer (allSpot = initialState, action) {
   switch (action.type) {
     case types.GET_ALL_SPOT_SUCCESS:
-      return { ...allSpot, spots: [...allSpot.spots, ...action.payload] }
+      return {
+        ...allSpot,
+        spots: [...allSpot.spots, ...action.payload],
+        skip: allSpot.skip + allSpot.top
+      }
     default:
       return allSpot
   }
