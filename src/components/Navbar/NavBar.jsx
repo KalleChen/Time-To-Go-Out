@@ -13,7 +13,6 @@ import {
   ListItemText
 } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
-import ExploreIcon from '@material-ui/icons/Explore'
 import MenuIcon from '@material-ui/icons/Menu'
 
 import useMenu from '../../utils/hooks/useMenu'
@@ -48,9 +47,15 @@ const NavBar = () => {
   return (
     <AppBar>
       <Toolbar>
-        <ExploreIcon className={classes.icon} />
+        <IconButton>
+          <img
+            src={`${process.env.PUBLIC_URL}/logo.png`}
+            alt='time-to-go-out'
+            height='40'
+          />
+        </IconButton>
         <Typography variant='h5' className={classes.title}>
-          好無聊喔
+          Time To Go Out！
         </Typography>
         <Hidden xsDown>
           {menus.map((menu, index) => (
