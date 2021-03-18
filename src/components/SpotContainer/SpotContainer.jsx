@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, makeStyles } from '@material-ui/core'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -10,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const SpotContainer = ({ scrollAction, children }) => {
+const SpotContainer = ({ scrollAction, spots, uiState }) => {
   const classes = useStyles()
 
   const checkScrollBottom = event => {
@@ -22,10 +23,17 @@ const SpotContainer = ({ scrollAction, children }) => {
     }
   }
   return (
-    <Container className={classes.container} onScroll={checkScrollBottom}>
-      {children}
-    </Container>
+    <Container
+      className={classes.container}
+      onScroll={checkScrollBottom}
+    ></Container>
   )
+}
+
+SpotContainer.prototypes = {
+  scrollAction: PropTypes.func.isRequired,
+  spots: PropTypes.array.isRequired,
+  uiState: PropTypes.object.isRequired
 }
 
 export default SpotContainer

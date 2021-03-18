@@ -1,27 +1,34 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getAllSpotAction } from '../../actions'
+import PropTypes from 'prop-types'
 
-import SpotContainer from '../ContentContainer'
+import SpotContainer from '../SpotContainer'
 
-const AllSpot = ({ allSpot, getAllSpot, ui }) => {
-  console.log(allSpot)
+const AllSpot = ({ spots, getAllSpot, uiState }) => {
+  console.log(spots, uiState)
   useEffect(() => {
     getAllSpot()
   }, [getAllSpot])
   return (
     <SpotContainer scrollAction={() => getAllSpot()}>
-      {allSpot.spots.map((spot, index) => (
+      {spots.map((spot, index) => (
         <p key={index}>{spot.DescriptionDetail}</p>
       ))}
     </SpotContainer>
   )
 }
 
+AllSpot.propTypes = {
+  spots: PropTypes.array.isRequired,
+  getAllSpot: PropTypes.func.isRequired,
+  uiState: PropTypes.object.isRequired
+}
+
 export default connect(
   state => ({
-    allSpot: state.allSpot,
-    ui: state.ui
+    spots: state.allSpot.spots,
+    uiState: state.ui.allSpot
   }),
   dispatch => ({
     getAllSpot: params => dispatch(getAllSpotAction(params))
