@@ -22,4 +22,4 @@ jobs:
           FIREBASE_CLI_PREVIEWS: hostingchannels
           APP_KEY: '${{secrets.REACT_APP_APP_KEY}}'
           APP_ID: '${{secrets.REACT_APP_APP_ID}}'
-          DOMAIN: '${{secrets.REACT_APP_DOMAIN'
+          DOMAIN: '${{secrets.REACT_APP_DOMAIN}}'
