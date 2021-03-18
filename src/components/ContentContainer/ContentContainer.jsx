@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const ContentContainer = ({ scrollAction, children }) => {
+const SpotContainer = ({ scrollAction, children }) => {
   const classes = useStyles()
 
   const checkScrollBottom = event => {
@@ -18,7 +18,7 @@ const ContentContainer = ({ scrollAction, children }) => {
       event.target.scrollHeight - event.target.scrollTop ===
       event.target.clientHeight
     if (bottom) {
-      console.log('bottom')
+      scrollAction()
     }
   }
   return (
@@ -28,4 +28,4 @@ const ContentContainer = ({ scrollAction, children }) => {
   )
 }
 
-export default ContentContainer
+export default SpotContainer

@@ -25,8 +25,7 @@ export default function uiReducer (ui = initialState, action) {
       return {
         ...ui,
         allSpot: {
-          ...ui.allSpot,
-          status: 'success'
+          ...initialState.allSpot
         }
       }
     case types.GET_ALL_SPOT_ERROR:
@@ -40,8 +39,8 @@ export default function uiReducer (ui = initialState, action) {
     case types.GET_CITY_SPOT:
       return {
         ...ui,
-        allSpot: {
-          ...ui.allSpot,
+        citySpot: {
+          ...ui.citySpot,
           status: 'loading'
         }
       }

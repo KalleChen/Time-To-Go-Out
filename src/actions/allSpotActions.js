@@ -1,6 +1,12 @@
 import * as types from '../constants/actionTypes'
 
-export const getAllSpotAction = (params) => ({
+import store from '../store'
+
+export const getAllSpotAction = params => ({
   type: types.GET_ALL_SPOT,
-  payload: params
+  payload: [
+    ...(params || []),
+    { key: 'top', value: store.getState().allSpot.top },
+    { key: 'skip', value: store.getState().allSpot.skip }
+  ]
 })

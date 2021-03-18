@@ -1,3 +1,3 @@
-import ContentContainer from './ContentContainer'
+import SpotContainer from './ContentContainer'
 
-export default ContentContainer
+export default SpotContainer

@@ -1,34 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getAllSpotAction } from '../../actions'
-import { Button } from '@material-ui/core'
 
-import ContentContainer from '../ContentContainer'
+import SpotContainer from '../ContentContainer'
 
 const AllSpot = ({ allSpot, getAllSpot, ui }) => {
   console.log(allSpot)
+  useEffect(() => {
+    getAllSpot()
+  }, [getAllSpot])
   return (
-    <ContentContainer
-      scrollAction={() => {
-        console.log('bottom')
-      }}
-    >
-      <Button
-        variant='contained'
-        color='primary'
-        onClick={() =>
-          getAllSpot([
-            { key: 'top', value: allSpot.top },
-            { key: 'skip', value: allSpot.skip }
-          ])
-        }
-      >
-        load
-      </Button>
+    <SpotContainer scrollAction={() => getAllSpot()}>
       {allSpot.spots.map((spot, index) => (
         <p key={index}>{spot.DescriptionDetail}</p>
       ))}
-    </ContentContainer>
+    </SpotContainer>
   )
 }
 
