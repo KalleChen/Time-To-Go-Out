@@ -9,8 +9,10 @@ import {
   IconButton,
   Popover,
   List,
-  ListItem
+  ListItem,
+  ListItemText
 } from '@material-ui/core'
+import { useHistory } from 'react-router-dom'
 import ExploreIcon from '@material-ui/icons/Explore'
 import MenuIcon from '@material-ui/icons/Menu'
 
@@ -32,6 +34,7 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = () => {
   const classes = useStyles()
+  const history = useHistory()
   const menus = [
     { title: '所有景點', url: '/scenicSpot' },
     { title: '所有城市', url: '/cities' }
@@ -83,10 +86,14 @@ const NavBar = () => {
         >
           <List>
             {menus.map((menu, index) => (
-              <ListItem key={index}>
-                <Button as='a' href={menu.url}>
-                  <Typography variant='body1'>{menu.title}</Typography>
-                </Button>
+              <ListItem
+                key={index}
+                button
+                onClick={() => {
+                  history.push(menu.url)
+                }}
+              >
+                <ListItemText primary={menu.title} />
               </ListItem>
             ))}
           </List>
