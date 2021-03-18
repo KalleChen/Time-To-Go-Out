@@ -23,7 +23,7 @@ import { googleMapPlaceRoute } from '../../constants/routes'
 const useStyles = makeStyles(theme => ({
   container: {
     paddingTop: theme.spacing(10),
-    height: '100vh',
+    height: 'calc(var(--vh, 1vh)*100)',
     overflowY: 'scroll',
     display: 'flex',
     flexDirection: 'row',
@@ -79,11 +79,7 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
                   component='div'
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography
-                    gutterBottom
-                    variant='h5'
-                    component='h2'
-                  >
+                  <Typography gutterBottom variant='h5' component='h2'>
                     {spot.Name}
                   </Typography>
                   <Typography
