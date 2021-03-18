@@ -11,11 +11,7 @@ const AllSpot = ({ spots, getAllSpot, uiState }) => {
     getAllSpot()
   }, [getAllSpot])
   return (
-    <SpotContainer scrollAction={() => getAllSpot()}>
-      {spots.map((spot, index) => (
-        <p key={index}>{spot.DescriptionDetail}</p>
-      ))}
-    </SpotContainer>
+    <SpotContainer scrollAction={getAllSpot} spots={spots} uiState={uiState} />
   )
 }
 
