@@ -47,15 +47,14 @@ export default function uiReducer (ui = initialState, action) {
     case types.GET_CITY_SPOT_SUCCESS:
       return {
         ...ui,
-        allSpot: {
-          ...ui.allSpot,
-          status: 'success'
+        citySpot: {
+          ...initialState.allSpot
         }
       }
     case types.GET_CITY_SPOT_ERROR:
       return {
         ...ui,
-        allSpot: {
+        citySpot: {
           status: 'error',
           message: action.payload
         }

@@ -4,7 +4,6 @@ import * as types from '../constants/actionTypes'
 import { getAllSpot } from '../api'
 
 export function * getAllSpotSaga ({ payload }) {
-  console.log('saga', payload)
   try {
     const res = yield call(getAllSpot, payload)
     const data = yield res.json()

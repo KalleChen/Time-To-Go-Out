@@ -46,7 +46,6 @@ export default class SpotFetcher {
   }
 
   handleResponse (res) {
-    console.log(res)
     return res
   }
 

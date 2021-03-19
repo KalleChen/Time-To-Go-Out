@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 import SpotContainer from '../SpotContainer'
 
 const AllSpot = ({ spots, getAllSpot, uiState }) => {
-  console.log(spots, uiState)
   useEffect(() => {
     getAllSpot()
   }, [getAllSpot])
+  console.log(spots)
   return (
     <SpotContainer scrollAction={getAllSpot} spots={spots} uiState={uiState} />
   )

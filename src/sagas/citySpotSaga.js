@@ -5,15 +5,15 @@ import { getCitySpot } from '../api'
 
 export function * getAllSpotSaga ({ payload }) {
   try {
-    const res = yield call(getCitySpot, payload)
+    const res = yield call(getCitySpot, { ...payload })
     const data = yield res.json()
     if (res.ok) {
-      yield put({ type: types.GET_ALL_SPOT_SUCCESS, payload: data })
+      yield put({ type: types.GET_CITY_SPOT_SUCCESS, payload: data })
     } else {
-      yield put({ type: types.GET_ALL_SPOT_ERROR, payload: data.message })
+      yield put({ type: types.GET_CITY_SPOT_ERROR, payload: data.message })
     }
   } catch (err) {
     console.error(err)
-    yield put({ type: types.GET_ALL_SPOT_ERROR, payload: err.message })
+    yield put({ type: types.GET_CITY_SPOT_ERROR, payload: err.message })
   }
 }
