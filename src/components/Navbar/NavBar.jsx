@@ -96,6 +96,7 @@ const NavBar = () => {
                 button
                 onClick={() => {
                   history.push(menu.url)
+                  closeMenu()
                 }}
               >
                 <ListItemText primary={menu.title} />
