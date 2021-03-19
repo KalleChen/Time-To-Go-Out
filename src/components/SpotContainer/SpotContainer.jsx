@@ -38,8 +38,9 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     position: 'absolute',
     left: 0,
-    top: 0,
-    background: 'linear-gradient(transparent 95%, #ffffff)'
+    bottom: 0,
+    background: 'transparent',
+    backgroundImage: '-webkit-linear-gradient(rgba(255, 255, 255, 0) 95%, rgba(255, 255, 255, 1))'
   },
   card: {
     maxWidth: 300,
