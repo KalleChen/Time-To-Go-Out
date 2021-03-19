@@ -14,7 +14,9 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  DialogActions
+  DialogActions,
+  CircularProgress,
+  Box
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
@@ -61,7 +63,7 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
     const bottom =
       event.target.scrollHeight - event.target.scrollTop ===
       event.target.clientHeight
-    if (bottom) {
+    if (bottom && uiState.status !== 'loading') {
       scrollAction()
     }
   }
@@ -116,6 +118,14 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
             </Card>
           </Grow>
         ))}
+        <Box width='100%' display='flex' justifyContent='center'>
+          {uiState.status === 'loading' && (
+            <CircularProgress color='secondary' />
+          )}
+          {uiState.status === 'error' && (
+            <Typography color='error'>{uiState.message}</Typography>
+          )}
+        </Box>
       </Container>
       <Dialog open={dialogOpen} onClose={handleCloseDialog}>
         {activeSpot && (
@@ -154,7 +164,10 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
 SpotContainer.prototypes = {
   scrollAction: PropTypes.func.isRequired,
   spots: PropTypes.array.isRequired,
-  uiState: PropTypes.object.isRequired
+  uiState: PropTypes.shape({
+    status: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired
+  })
 }
 
 export default SpotContainer

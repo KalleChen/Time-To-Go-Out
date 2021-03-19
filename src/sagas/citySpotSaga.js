@@ -1,12 +1,11 @@
 import { put, call } from 'redux-saga/effects'
 
 import * as types from '../constants/actionTypes'
-import { getAllSpot } from '../api'
+import { getCitySpot } from '../api'
 
 export function * getAllSpotSaga ({ payload }) {
-  console.log('saga', payload)
   try {
-    const res = yield call(getAllSpot, payload)
+    const res = yield call(getCitySpot, payload)
     const data = yield res.json()
     if (res.ok) {
       yield put({ type: types.GET_ALL_SPOT_SUCCESS, payload: data })

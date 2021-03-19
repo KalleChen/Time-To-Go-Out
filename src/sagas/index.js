@@ -2,7 +2,7 @@ import { all, takeLatest } from 'redux-saga/effects'
 
 import * as types from '../constants/actionTypes'
 import * as allSpotSaga from './allSpotSaga'
-import * as citySpotSaga from './citySaga'
+import * as citySpotSaga from './citySpotSaga'
 
 export default function * rootSaga () {
   yield all([

@@ -1,9 +1,12 @@
 import * as types from '../constants/actionTypes'
 
-export const getCitySpotAction = (top, skip) => ({
+import store from '../store'
+
+export const getCitySpotAction = params => ({
   type: types.GET_CITY_SPOT,
-  payload: {
-    top: top,
-    skip: skip
-  }
+  payload: [
+    ...(params || []),
+    { key: 'top', value: store.getState().citySpot.top },
+    { key: 'skip', value: store.getState().citySpot.skip }
+  ]
 })
