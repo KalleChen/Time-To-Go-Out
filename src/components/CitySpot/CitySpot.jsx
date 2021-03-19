@@ -11,7 +11,7 @@ const CitySpot = ({ citySpots, getCitySpot, uiState }) => {
   useEffect(() => {
     getCitySpot({ city: city })
   }, [city, getCitySpot])
-  console.log(citySpots)
+  console.log(citySpots, uiState)
   return (
     <SpotContainer
       spots={citySpots}

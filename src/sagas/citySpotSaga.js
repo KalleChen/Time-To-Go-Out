@@ -8,7 +8,11 @@ export function * getAllSpotSaga ({ payload }) {
     const res = yield call(getCitySpot, { ...payload })
     const data = yield res.json()
     if (res.ok) {
-      yield put({ type: types.GET_CITY_SPOT_SUCCESS, payload: data })
+      if (data.length === 0) {
+        yield put({ type: types.GET_CITY_SPOT_END, payload: data })
+      } else {
+        yield put({ type: types.GET_CITY_SPOT_SUCCESS, payload: data })
+      }
     } else {
       yield put({ type: types.GET_CITY_SPOT_ERROR, payload: data.message })
     }

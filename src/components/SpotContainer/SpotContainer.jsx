@@ -63,7 +63,7 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
     const bottom =
       event.target.scrollHeight - event.target.scrollTop ===
       event.target.clientHeight
-    if (bottom && uiState.status !== 'loading') {
+    if (bottom && uiState.status !== 'loading' && uiState.status !== 'end') {
       scrollAction()
     }
   }
@@ -118,12 +118,15 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
             </Card>
           </Grow>
         ))}
-        <Box width='100%' display='flex' justifyContent='center'>
+        <Box p={4} width='100%' display='flex' justifyContent='center'>
           {uiState.status === 'loading' && (
             <CircularProgress color='secondary' />
           )}
           {uiState.status === 'error' && (
             <Typography color='error'>{uiState.message}</Typography>
+          )}
+          {uiState.status === 'end' && (
+            <Typography color='secondary'>{uiState.message}</Typography>
           )}
         </Box>
       </Container>

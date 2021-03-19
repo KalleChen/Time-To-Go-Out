@@ -36,6 +36,14 @@ export default function uiReducer (ui = initialState, action) {
           message: action.payload
         }
       }
+    case types.GET_ALL_SPOT_END:
+      return {
+        ...ui,
+        citySpot: {
+          status: 'end',
+          message: '已經沒有更多景點了～'
+        }
+      }
     case types.GET_CITY_SPOT:
       return {
         ...ui,
@@ -57,6 +65,14 @@ export default function uiReducer (ui = initialState, action) {
         citySpot: {
           status: 'error',
           message: action.payload
+        }
+      }
+    case types.GET_CITY_SPOT_END:
+      return {
+        ...ui,
+        citySpot: {
+          status: 'end',
+          message: '已經沒有更多景點了～'
         }
       }
     default:
