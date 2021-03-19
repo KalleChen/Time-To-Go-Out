@@ -33,6 +33,14 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  fade: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    background: 'linear-gradient(transparent 90%, white)'
+  },
   card: {
     maxWidth: 300,
     margin: theme.spacing(3)
@@ -42,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   cardContent: {
     height: '250px',
-    overflow: 'scroll'
+    overflow: 'hidden'
   }
 }))
 
@@ -91,6 +99,7 @@ const SpotContainer = ({ scrollAction, spots, uiState }) => {
                   >
                     {spot.Description || spot.DescriptionDetail}
                   </Typography>
+                  <div className={classes.fade} />
                 </CardContent>
               </CardActionArea>
               <CardActions>

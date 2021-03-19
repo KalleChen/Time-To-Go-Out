@@ -9,7 +9,6 @@ const AllSpot = ({ spots, getAllSpot, uiState }) => {
   useEffect(() => {
     getAllSpot()
   }, [getAllSpot])
-  console.log(spots)
   return (
     <SpotContainer scrollAction={getAllSpot} spots={spots} uiState={uiState} />
   )
