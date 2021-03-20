@@ -1,5 +1,8 @@
 # Time-To-Go-Out
 ![](https://github.com/kallechen/Time-To-Go-Out/actions/workflows/deploy_to_firebase.yml/badge.svg)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![](https://img.shields.io/github/license/kallechen/Time-To-Go-Out)
+![](https://img.shields.io/github/last-commit/kallechen/Time-To-go-out)
 
 This application is used to help you find a place to go when you have no idea where to go.
 
