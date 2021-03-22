@@ -38,7 +38,6 @@ REACT_APP_APP_ID = your MOTC Transport API App ID
 REACT_APP_APP_KEY = your MOTC Transport API App Key
 REACT_APP_DOMAIN = MOTC Transport API's Domain
 ```
-
 ### Run on local
 ```bash
 git clone ...
@@ -46,3 +45,9 @@ cd ...
 yarn install
 yarn start
 ```
+
+## Future Feature
+
+- [ ] Show spots which near you
+- [ ] Add Restaurants Datas
+- [ ] Add random pick function
